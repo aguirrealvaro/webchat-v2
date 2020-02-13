@@ -1,7 +1,7 @@
 <h1>WebChat.</h2>
-<p>Real time web app to chat with other users. With authentication.</p>
+Real time web app to chat with other users. With authentication
 <br/>
-<p>Stack: </p>
-<p>Node, Express, PostgreSQL, Sequelize, JWT Tokens</p>
-<p>React, Redux, SASS, Socket.IO</p>
+Stack:
+Node, Express, PostgreSQL, Sequelize, JWT Tokens
+React, Redux, SASS, Socket.IO
 
