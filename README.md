@@ -5,3 +5,4 @@ Stack:
 Node, Express, PostgreSQL, Sequelize, JWT Tokens
 React, Redux, SASS, Socket.IO
 
+Deploy: https://webchat-v2.herokuapp.com
