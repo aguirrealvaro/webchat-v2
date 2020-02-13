@@ -1,0 +1,13 @@
+@import '../../App/variables';
+
+.stackinfo-container{
+    width: 80%;
+    section{
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: rgb(255, 255, 255);
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}

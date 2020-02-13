@@ -1,0 +1,59 @@
+@import '../App/variables';
+
+.contacts-container{
+    position: relative;
+    flex: 1;
+    .searcher-container{
+        margin: 0.3rem;
+        input {
+            width: 100%;
+            font-size: 0.8rem;
+            color: $dark_grey;
+        }
+    }
+    .contacts-list {
+        .each-user{
+            cursor: pointer;
+            border-bottom: 1px solid #5d5d5e1e;
+            margin-left: 1px;
+            padding: 0.5rem;
+            background-color: white;
+            &:last-child{
+                border-bottom: none;
+            }
+            .top-box, .bottom-box{
+                display: flex;
+                justify-content: space-between;
+                color: $dark_grey;
+            }
+            .top-box{
+                .username-box{
+                    color: black;
+                }
+                .time-box{
+                    font-size: 0.9rem;
+                }
+            }
+            .bottom-box{
+                font-size: 0.9rem;
+                margin-top: 0.3rem;
+                .lastmessage-box{
+                    margin-left: 0.5rem;
+                    margin-right: 0.5rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .unseencount-box{
+                    background-color: $blue;
+                    color: white;
+                    border-radius: 50%;
+                    padding: 0 0.4rem;
+                }
+            }
+            &:hover{
+                background-color: $light_grey;
+            }
+        }
+    }
+}

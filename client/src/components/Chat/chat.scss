@@ -1,0 +1,43 @@
+@import "../App/variables";
+
+.chat-container {
+  color: $dark_grey;
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  //max-height: 593.85px;
+  //overflow: auto;
+
+  .each-msg {
+    margin-bottom: 0.7rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .bubble {
+      box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+      padding: 0.3rem;
+      max-width: 100%;
+      word-break: break-word;
+      .msg-content {
+        font-size: 0.9rem;
+      }
+      .msg-date {
+        margin-left: 1rem;
+        font-size: 0.6rem;
+      }
+    }
+    .from-origin {
+      background-color: white;
+      border-radius: 8px 8px 0 8px;
+      float: right;
+    }
+    .from-destiny {
+      border-radius: 0px 8px 8px 8px;
+      background-color: $blue;
+      color: white;
+      float: left;
+    }
+  }
+}

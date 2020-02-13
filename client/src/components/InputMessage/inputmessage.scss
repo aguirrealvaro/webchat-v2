@@ -1,0 +1,36 @@
+@import '../App/variables';
+
+.input-message-container{
+    padding: 0 0.4rem 0.4rem 0.4rem;
+    form{
+        display: flex;
+        textarea{
+            width: 85%;
+            min-width: 85%;
+            max-width: 85%;
+            border-radius: 0.5rem;
+            font-family: 'Segoe UI', Arial;
+            background: white;
+            padding: 0.5rem 1rem;
+            outline: none;
+            font-size: 0.9rem;
+            height: 2.5rem;
+            min-height: 2.5rem;
+            max-height: 6rem;
+            &:focus{
+                border-color: $blue;
+            }
+        }
+        input[type="submit"], button{
+            margin-left: 0.3rem;
+            width: 15%;
+            color: white;
+            background-color: $blue;
+            cursor: pointer;
+            &:disabled{
+                cursor: default;
+                opacity:0.5;
+            }
+        }
+    }
+}

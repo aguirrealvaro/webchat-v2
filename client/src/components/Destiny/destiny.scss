@@ -1,0 +1,25 @@
+@import '../App/variables';
+
+.destiny-container{
+    position: relative;
+    background-color: $blue;
+    padding: 1rem;
+    color: white;
+    text-align: center;
+    .arrow-back{
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        span {
+            padding: 1rem;
+        }
+    }
+}
+
+
+@media screen and (max-width: 420px){
+    .arrow-back{
+        display: block !important;
+    }
+}

@@ -1,0 +1,153 @@
+@import 'variables';
+
+*,
+*:after,
+*:before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial;
+}
+
+.root{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex: 1;
+    background-color: #e6e6e6;
+    //padding-top: 5rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+@media screen and (max-width: $desktop){
+    .container{
+        max-width: auto;
+        width: 100%;
+    }
+}
+
+/* .loading-container{
+    height: 100%;
+    position: relative;
+} */
+
+/* .white-box{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.356);
+} */
+
+p{
+    margin: 0;
+}
+
+button{
+    border: none;
+    font-family: 'Segoe UI', Arial;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    border-radius: 0.5rem;
+    background: $blue;
+    width: 100%;
+    &:disabled{
+        cursor: default;
+        opacity:0.5;
+    }
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+    //outline: none !important; 
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+legend{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+label{
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    margin-top: 0.7rem;
+    &:first-child{
+        margin-top: 0rem;
+    }
+}
+
+input{
+    background: white;
+    font-family: 'Segoe UI', Arial;
+    border-radius: 0.5rem;
+    border: none;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    display: block;
+    //margin-bottom: 0.7rem;
+    outline: none;
+    font-size: 1rem;
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+
+input[type="text"], input[type="password"]{
+    border: 1px solid rgb(192, 192, 192);
+    &:focus{
+        border-color: $blue;
+    }
+}
+
+/* input[type="submit"]{
+    background-color: $blue;
+    text-transform: uppercase;
+    color: white;
+} */
+
+@media screen and (max-width: $medium){
+    html{
+        font-size: 90%;
+    }
+}
+
+.question-form{
+    margin-top: 1.5rem;
+    font-weight: bold;
+}
+
+.blue-link{
+    color: $blue;
+}
+
+.show-error{
+    font-size: 0.8rem;
+    color: red;
+    display: block;
+    margin-top: 0.1rem;
+}
