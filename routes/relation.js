@@ -20,8 +20,8 @@ router.get('/', auth, async (req, res) => {
     myRelations.sort((a, b)=>{
         if((a.infoLastMessage && b.infoLastMessage) && (a.infoLastMessage.created_at > b.infoLastMessage.created_at)) return -1
         if((a.infoLastMessage && b.infoLastMessage) &&(a.infoLastMessage.created_at < b.infoLastMessage.created_at)) return 1
-        if(!a.infoLastMessage || !b.infoLastMessage) return 0
-        //return 0
+        if(!a.infoLastMessage || !b.infoLastMessage) return 2
+        return 0
     })
 	res.status(200).json({ myRelations });
 });

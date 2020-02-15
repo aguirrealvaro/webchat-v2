@@ -7,8 +7,8 @@ main {
             width: 35%;
             border-left: 1px solid $border;
             border-right: 1px solid $border;
-            display: flex;
-            flex-direction: column;
+            //display: flex;
+            //flex-direction: column;
         }
         .right-side{
             background-image: url("https://res.cloudinary.com/practicaldev/image/fetch/s--WAKqnINn--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/tw0nawnvo0zpgm5nx4fp.png");
@@ -17,8 +17,8 @@ main {
             background-position: center;
             width: 65%;
             border-right: 1px solid $border;
-            display: flex;
-            flex-direction: column;
+            //display: flex;
+            //flex-direction: column;
             .select-user-container{
                 height: 100%;
                 display: flex;

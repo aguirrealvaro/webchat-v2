@@ -10,6 +10,7 @@
 
 body {
     font-family: 'Segoe UI', Arial;
+    overflow: hidden;
 }
 
 .root{
@@ -80,7 +81,6 @@ li{
 a{
     color: black;
     text-decoration: none;
-    //outline: none !important; 
     &:hover{
         text-decoration: none;
     }
@@ -109,7 +109,6 @@ input{
     width: 100%;
     padding: 0.5rem 1rem;
     display: block;
-    //margin-bottom: 0.7rem;
     outline: none;
     font-size: 1rem;
     &:last-child{
@@ -123,12 +122,6 @@ input[type="text"], input[type="password"]{
         border-color: $blue;
     }
 }
-
-/* input[type="submit"]{
-    background-color: $blue;
-    text-transform: uppercase;
-    color: white;
-} */
 
 @media screen and (max-width: $medium){
     html{
@@ -150,4 +143,13 @@ input[type="text"], input[type="password"]{
     color: red;
     display: block;
     margin-top: 0.1rem;
+}
+
+*::-webkit-scrollbar{
+    width: 5px;
+}
+
+*::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: #b3b3b3;
 }

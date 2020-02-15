@@ -3,12 +3,11 @@
 .chat-container {
   color: $dark_grey;
   padding: 1rem;
-  flex: 1;
+  //flex: 1;
   display: flex;
   flex-direction: column;
   //max-height: 593.85px;
-  //overflow: auto;
-
+  overflow: auto;
   .each-msg {
     margin-bottom: 0.7rem;
 
@@ -41,3 +40,13 @@
     }
   }
 }
+
+.scroll-to-bottom{
+  width: 100%;
+  height: calc(100vh - 100px);
+  .button-scroll{
+    //display: none;
+    margin-bottom: 1rem;
+  }
+}
+
