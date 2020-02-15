@@ -21,7 +21,7 @@ export const Chat = (props) => {
 			}
 		});
 	}, []);
-	console.log("componentWillRecieveProps warning beacuse exter")
+	
 	return (
 		<ScrollToBottom className="scroll-to-bottom" followButtonClassName="button-scroll">
 			<div className="chat-container">
