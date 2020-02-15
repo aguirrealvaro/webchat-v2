@@ -8,6 +8,8 @@
             width: 85%;
             min-width: 85%;
             max-width: 85%;
+            min-height: 2.5rem;
+            max-height: 2.5rem;
             border-radius: 0.5rem;
             font-family: 'Segoe UI', Arial;
             background: white;
@@ -15,8 +17,6 @@
             outline: none;
             font-size: 0.9rem;
             height: 2.5rem;
-            min-height: 2.5rem;
-            max-height: 6rem;
             &:focus{
                 border-color: $blue;
             }
