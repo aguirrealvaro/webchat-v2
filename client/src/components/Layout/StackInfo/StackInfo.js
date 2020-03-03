@@ -11,7 +11,7 @@ export const StackInfo = () => {
       <section>
         <p>Stack: </p>
         <p>Node, Express, PostgreSQL, Sequelize, JWT Tokens</p>
-        <p>React, Redux, SASS, Socket.IO</p>
+        <p>React, Redux, SASS (Responsive design), Socket.IO</p>
       </section>
     </div>
   );
