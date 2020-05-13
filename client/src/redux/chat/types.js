@@ -12,6 +12,4 @@ export const  ChatTypes = {
 
     MARK_AS_READ_REQUEST: '@chat/MARK_AS_READ_REQUEST',
     MARK_AS_READ_SUCCESS: '@chat/MARK_AS_READ_SUCCESS',
-
-    CLEAR_STORE: '@chat/CLEAR_STORE'
 }

@@ -1,8 +1,18 @@
-import { combineReducers } from 'redux'
-import authReducer from './auth/reducer'
-import chatReducer from './chat/reducer'
+import authReducer from "./auth/reducer";
+import chatReducer from "./chat/reducer";
+import { combineReducers } from "redux";
+import { AuthTypes } from "./auth/types";
 
-export default combineReducers({
-    auth: authReducer,
-    chat: chatReducer
-})
+const appReducer = combineReducers({
+  auth: authReducer,
+  chat: chatReducer,
+});
+
+const rootReducer = (state, action) => {
+  if (action.type === AuthTypes.LOGOUT_USER) {
+    state = undefined;
+  }
+  return appReducer(state, action);
+};
+
+export default rootReducer;

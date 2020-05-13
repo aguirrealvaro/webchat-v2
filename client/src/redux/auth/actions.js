@@ -1,5 +1,4 @@
 import { AuthTypes } from "./types";
-import { ChatTypes } from "../chat/types";
 import { socket } from "../../services/socketio";
 
 import { 
@@ -72,7 +71,6 @@ export const setUserLogged = user => async dispatch => {
 export const logOutUser = () => async dispatch => {
   localStorage.removeItem("token");
   dispatch({ type: AuthTypes.LOGOUT_USER });
-  dispatch({ type: ChatTypes.CLEAR_STORE });
 };
 
 export const clearErrors = ()=> dispatch=>{
