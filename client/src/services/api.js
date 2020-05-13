@@ -1,40 +1,27 @@
 import axios from "axios";
-import { BASE_URL } from '../const'
+import { BASE_URL } from "../const";
 
-const getAxiosClient = () => {
-  const token = localStorage.getItem("token");
-  return axios.create({
-    baseURL: BASE_URL,
-    headers: { "auth-token": token }
-  });
-};
+const api = axios.create({ baseURL: BASE_URL });
 
-export const registerUser = dataRegister => {
-  const api = getAxiosClient();
-  return api.post("/user/register", dataRegister);
-};
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem("token");
+    if (token) config.headers['auth-token'] = `${token}`;
+    return config;
+  },
+  (err) => Promise.reject(err)
+);
 
-export const loginUser = dataLogin => {
-  const api = getAxiosClient();
-  return api.post("/user/login", dataLogin);
-};
+export const registerUser = (dataRegister) =>
+  api.post("/user/register", dataRegister);
 
-export const getUsers = () => {
-  const api = getAxiosClient();
-  return api.get("/relation");
-};
+export const loginUser = (dataLogin) => api.post("/user/login", dataLogin);
 
-export const getChat = id => {
-  const api = getAxiosClient();
-  return api.get(`/message/chat/${id}`);
-};
+export const getUsers = () => api.get("/relation");
 
-export const postMessage = dataMessage => {
-  const api = getAxiosClient();
-  return api.post("/message", dataMessage);
-};
+export const getChat = (id) => api.get(`/message/chat/${id}`);
 
-export const markAsRead = idDestiny => {
-  const api = getAxiosClient();
-  return api.put(`/message/mark-as-read/${idDestiny}`);
-};
+export const postMessage = (dataMessage) => api.post("/message", dataMessage);
+
+export const markAsRead = (idDestiny) =>
+  api.put(`/message/mark-as-read/${idDestiny}`);

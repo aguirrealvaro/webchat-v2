@@ -1,5 +1,4 @@
 import { AuthTypes } from "./types";
-import setAuthToken from "../../services/setAuthToken";
 import { ChatTypes } from "../chat/types";
 import { socket } from "../../services/socketio";
 
@@ -40,7 +39,6 @@ export const registerUserFailure = errors => async dispatch => {
 export const loginUserRequest = dataLogin => async dispatch => {
   dispatch({ type: AuthTypes.LOGIN_USER_REQUEST });
   try {
-    //const response = await axios.post(`${BASE_URL}/user/login`, dataLogin);
     const response = await loginUserAPI(dataLogin)
     dispatch(loginUserSuccess(response.data));
   } catch (err) {
@@ -51,7 +49,6 @@ export const loginUserRequest = dataLogin => async dispatch => {
 export const loginUserSuccess = response => async dispatch => {
   const { token, user } = response;
   localStorage.setItem("token", token);
-  //setAuthToken(token);
   dispatch({
     type: AuthTypes.LOGIN_USER_SUCCESS,
     payload: user
@@ -73,7 +70,6 @@ export const setUserLogged = user => async dispatch => {
 };
 
 export const logOutUser = () => async dispatch => {
-  setAuthToken(false);
   localStorage.removeItem("token");
   dispatch({ type: AuthTypes.LOGOUT_USER });
   dispatch({ type: ChatTypes.CLEAR_STORE });

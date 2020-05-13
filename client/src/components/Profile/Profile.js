@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import "./profile.scss";
-import { useDispatch } from 'react-redux'
-import { logOutUser } from '../../redux/auth/actions'
 
-export const Profile = props => {
-  const { username } = props;
-
+export const Profile = ({ username, dispatch, logOutUser }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const dispatch = useDispatch()
 
   return (
     <div className="profile-container">
