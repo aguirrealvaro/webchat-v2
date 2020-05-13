@@ -8,7 +8,7 @@ const InitialState = {
   sendingMsg: false,
 };
 
-export default function(state = InitialState, action) {
+export default function (state = InitialState, action) {
   switch (action.type) {
     case ChatTypes.GET_USERS_REQUEST:
       return {

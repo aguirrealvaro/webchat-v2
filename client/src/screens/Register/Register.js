@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { registerUserRequest, clearErrors } from '../../redux/auth/actions'
-import { Spinner, Welcome } from '../../components'
+import { registerUserRequest, clearErrors } from "../../redux/auth/actions";
+import { Spinner, Welcome } from "../../components";
 import "./auth.scss";
 
-export const Register = props => {
-  const auth = useSelector(state=>state.auth)
-  const dispatch = useDispatch()
+export const Register = (props) => {
+  const auth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
-  const { isAuth, errors, loading } = auth
-  const { history } = props
+  const { isAuth, errors, loading } = auth;
+  const { history } = props;
 
   const [registerForm, setRegisterForm] = useState({
     username: "",
     password: "",
-    password2: ""
+    password2: "",
   });
 
   const { username, password, password2 } = registerForm;
@@ -24,24 +24,24 @@ export const Register = props => {
     if (isAuth) history.push("/");
   }, [isAuth, history]);
 
-  useEffect(()=>{
-    return ()=> dispatch(clearErrors())
-}, [])
+  useEffect(() => {
+    return () => dispatch(clearErrors());
+  }, []);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setRegisterForm({
       ...registerForm,
-      [name]: value
+      [name]: value,
     });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const dataRegister = {
       username,
       password,
-      password2
+      password2,
     };
     dispatch(registerUserRequest(dataRegister));
   };
@@ -59,7 +59,7 @@ export const Register = props => {
             value={username}
             onChange={handleChange}
             style={{
-              border: errors && errors.user ? "1px solid red" : undefined
+              border: errors && errors.user ? "1px solid red" : undefined,
             }}
           ></input>
           {errors && errors.user && (
@@ -73,7 +73,7 @@ export const Register = props => {
             value={password}
             onChange={handleChange}
             style={{
-              border: errors && errors.password ? "1px solid red" : undefined
+              border: errors && errors.password ? "1px solid red" : undefined,
             }}
           ></input>
           {errors && errors.password && (
@@ -87,7 +87,7 @@ export const Register = props => {
             value={password2}
             onChange={handleChange}
             style={{
-              border: errors && errors.password2 ? "1px solid red" : undefined
+              border: errors && errors.password2 ? "1px solid red" : undefined,
             }}
           ></input>
           {errors && errors.password2 && (
@@ -98,7 +98,7 @@ export const Register = props => {
             type="submit"
             disabled={!username || !password || !password2 ? true : false}
           >
-            {loading ? <Spinner/> : 'Register'}
+            {loading ? <Spinner /> : "Register"}
           </button>
         </form>
         <div className="question-form">

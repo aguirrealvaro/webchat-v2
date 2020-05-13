@@ -1,4 +1,4 @@
-import io from 'socket.io-client'
-import { ENDPOINT } from '../const'
+import io from "socket.io-client";
+import { ENDPOINT } from "../const";
 
-export const socket = io(ENDPOINT)
+export const socket = io(ENDPOINT);

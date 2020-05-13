@@ -1,1 +1,1 @@
-export * from './StackInfo'
+export * from "./StackInfo";

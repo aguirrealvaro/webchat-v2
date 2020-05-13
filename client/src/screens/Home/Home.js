@@ -8,7 +8,12 @@ import {
   InputMessage,
 } from "../../components";
 import { logOutUser } from "../../redux/auth/actions";
-import { getUsersRequest, setUserDestiny, getChatRequest, postMessageRequest } from "../../redux/chat/actions";
+import {
+  getUsersRequest,
+  setUserDestiny,
+  getChatRequest,
+  postMessageRequest,
+} from "../../redux/chat/actions";
 import "./home.scss";
 
 export const Home = () => {
@@ -29,15 +34,12 @@ export const Home = () => {
     setWindowWidth(window.innerWidth);
   };
 
-  useEffect(
-    () => {
-      if (windowWidth > 420) {
-        const rightSide = document.querySelector(".right-side");
-        rightSide.classList.remove("show-destiny");
-      }
-    },
-    [windowWidth]
-  );
+  useEffect(() => {
+    if (windowWidth > 420) {
+      const rightSide = document.querySelector(".right-side");
+      rightSide.classList.remove("show-destiny");
+    }
+  }, [windowWidth]);
 
   return (
     <div className="container">

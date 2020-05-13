@@ -1,1 +1,1 @@
-export * from './Destiny'
+export * from "./Destiny";

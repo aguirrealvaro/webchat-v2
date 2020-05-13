@@ -17,7 +17,7 @@ export const InputMessage = ({
       destiny: idDestiny,
       content: message,
     };
-    
+
     dispatch(postMessageRequest(dataMessage, idOrigin));
     setMessage("");
   };

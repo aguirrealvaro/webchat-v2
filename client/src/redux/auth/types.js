@@ -10,5 +10,5 @@ export const AuthTypes = {
   SET_USER_LOGGED: "@auth/SET_USER_LOGGED",
   LOGOUT_USER: "@auth/LOGOUT_USER",
 
-  CLEAR_STATE: "@auth/CLEAR_STATE"
+  CLEAR_STATE: "@auth/CLEAR_STATE",
 };

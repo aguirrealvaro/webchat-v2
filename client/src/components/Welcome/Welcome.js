@@ -2,7 +2,7 @@ import React from "react";
 import { StackInfo } from "../";
 import "./welcome.scss";
 
-export const Welcome = props => {
+export const Welcome = (props) => {
   return (
     <div className="welcome-container">
       <div className="left-column">
