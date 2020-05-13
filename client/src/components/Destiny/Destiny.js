@@ -1,9 +1,7 @@
 import React from "react";
 import "./destiny.scss";
 
-export const Destiny = props => {
-  const { username } = props.destiny;
-
+export const Destiny = ({ destiny: { username } }) => {
   const handleBack = () => {
     const rightSide = document.querySelector(".right-side");
     rightSide.classList.remove("show-destiny");

@@ -1,8 +1,13 @@
-import React from 'react';
-import './spinner.scss'
+import React from "react";
+import "./spinner.scss";
 
 export const Spinner = () => {
-    return ( 
-        <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
-     );
-}
+  return (
+    <div className="lds-ring">
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  );
+};

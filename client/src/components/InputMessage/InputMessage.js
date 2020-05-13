@@ -1,22 +1,23 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { Spinner } from "../";
 import "./inputmessage.scss";
-import { postMessageRequest } from "../../redux/chat/actions";
-import { Spinner } from "../Spinner";
 
-export const InputMessage = props => {
-  const { idOrigin, idDestiny, sendingMsg } = props;
-
+export const InputMessage = ({
+  idOrigin,
+  idDestiny,
+  sendingMsg,
+  dispatch,
+  postMessageRequest,
+}) => {
   const [message, setMessage] = useState("");
-  const dispatch = useDispatch();
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const dataMessage = {
       destiny: idDestiny,
-      content: message
+      content: message,
     };
-
+    
     dispatch(postMessageRequest(dataMessage, idOrigin));
     setMessage("");
   };
@@ -24,7 +25,7 @@ export const InputMessage = props => {
   return (
     <div className="input-message-container">
       <form
-        onSubmit={e => {
+        onSubmit={(e) => {
           handleSubmit(e);
         }}
       >
@@ -32,8 +33,8 @@ export const InputMessage = props => {
           type="text"
           placeholder="Send a message..."
           value={message}
-          onChange={e => setMessage(e.target.value)}
-          onKeyDown={e => {
+          onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={(e) => {
             if (e.keyCode === 13) {
               e.preventDefault();
               if (message) handleSubmit(e);

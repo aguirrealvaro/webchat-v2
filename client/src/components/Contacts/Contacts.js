@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from 'react-redux'
-import "./contacts.scss";
 import { calculateDate } from "../../utils";
 import { socket } from "../../services/socketio";
-import { getUsersRequest, setUserDestiny } from '../../redux/chat/actions'
+import "./contacts.scss";
 
-export const Contacts = props => {
-  const { id: idUserLogged, contacts } = props;
-
+export const Contacts = ({
+  id: idUserLogged,
+  contacts,
+  dispatch,
+  getUsersRequest,
+  setUserDestiny,
+}) => {
   const [inputSearch, setInputSearch] = useState("");
   const [userSelected, setUserSelected] = useState("");
-  const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(getUsersRequest());
@@ -22,7 +23,7 @@ export const Contacts = props => {
     });
   }, []);
 
-  const handleUserDestiny = userDestiny => {
+  const handleUserDestiny = (userDestiny) => {
     dispatch(setUserDestiny(userDestiny));
 
     const rightSide = document.querySelector(".right-side");
@@ -35,7 +36,7 @@ export const Contacts = props => {
   if (inputSearch === "") {
     results = contacts;
   } else {
-    results = contacts.filter(user => {
+    results = contacts.filter((user) => {
       return (
         user.infoDestiny.username
           .toLowerCase()
@@ -51,21 +52,21 @@ export const Contacts = props => {
           className="input-searcher"
           placeholder="Search..."
           value={inputSearch}
-          onChange={e => setInputSearch(e.target.value)}
+          onChange={(e) => setInputSearch(e.target.value)}
         />
       </div>
       <div className="contacts-list">
-        {results.map(user => {
+        {results.map((user) => {
           const {
             id,
             unseencount,
             infoDestiny: { id: destinyId, username },
-            infoLastMessage
+            infoLastMessage,
           } = user;
 
           const userDestiny = {
             id: destinyId,
-            username
+            username,
           };
 
           return (
@@ -78,7 +79,7 @@ export const Contacts = props => {
               style={{
                 fontWeight: unseencount === 0 ? undefined : "bold",
                 backgroundColor:
-                  userSelected === destinyId ? "#ebebeb" : undefined
+                  userSelected === destinyId ? "#ebebeb" : undefined,
               }}
             >
               <div className="top-box">
@@ -95,11 +96,9 @@ export const Contacts = props => {
                 <div className="lastmessage-box">
                   {infoLastMessage && (
                     <span>
-                      {infoLastMessage.origin === idUserLogged ? (
-                        'Sent: '
-                      ) : (
-                        'Recieved: '
-                      )}
+                      {infoLastMessage.origin === idUserLogged
+                        ? "Sent: "
+                        : "Recieved: "}
                       {infoLastMessage.content}
                     </span>
                   )}
