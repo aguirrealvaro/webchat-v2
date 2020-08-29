@@ -4,7 +4,10 @@ const cors = require("cors");
 const socketio = require("socket.io");
 const app = express();
 
-dotenv.config();
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

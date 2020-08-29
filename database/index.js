@@ -1,9 +1,9 @@
 const Sequelize = require("sequelize");
-const config = require("./config");
-const { db, username, password, host } = config;
 
-const sequelize = new Sequelize(db, username, password, {
-  host,
+const { DB_NAME, DB_USERNAME, DB_PASSWORD, DB_HOST } = process.env;
+
+const sequelize = new Sequelize(DB_NAME, DB_USERNAME, DB_PASSWORD, {
+  host: DB_HOST,
   dialect: "postgres",
   pool: {
     max: 5,
